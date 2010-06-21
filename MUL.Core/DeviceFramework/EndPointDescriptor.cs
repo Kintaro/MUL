@@ -32,7 +32,7 @@ namespace MUL.Core.DeviceFramework
 		/// 		0 = OUT endpoint 
 		/// 		1 = IN endpoint
 		/// </summary>
-		public byte EndpointAddres { get; set; }
+		public byte EndpointAddress { get; set; }
 		/// <summary>
 		/// 	This field describes the endpoint’s attributes when it is 
 		/// 	configured using the bConfigurationValue.
