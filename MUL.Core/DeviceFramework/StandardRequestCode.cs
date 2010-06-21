@@ -1,5 +1,5 @@
 using System;
-namespace MUL.Core
+namespace MUL.Core.DeviceFramework
 {
 	public enum StandardRequestCode : byte
 	{

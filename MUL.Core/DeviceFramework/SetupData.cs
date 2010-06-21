@@ -1,5 +1,5 @@
 using System;
-namespace MUL.Core
+namespace MUL.Core.DeviceFramework
 {
 	/// <summary>
 	/// 	All devices respond to requests from the host on the 
