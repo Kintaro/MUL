@@ -1,5 +1,5 @@
 using System;
-namespace MUL.Core
+namespace MUL.Core.Protocol
 {
 	public class IsochronousTimestamp : IField
 	{
