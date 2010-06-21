@@ -1,5 +1,5 @@
 using System;
-namespace MUL.Core
+namespace MUL.Core.Protocol
 {
 	/// <summary>
 	/// 	The 2-byte Link Control Word is  used for both link level 

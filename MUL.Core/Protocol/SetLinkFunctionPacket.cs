@@ -1,5 +1,5 @@
 using System;
-namespace MUL.Core
+namespace MUL.Core.Protocol
 {
 	/// <summary>
 	/// 	The Set Link Function LMP shall be used to configure 

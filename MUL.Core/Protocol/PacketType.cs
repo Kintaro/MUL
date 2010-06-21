@@ -1,5 +1,5 @@
 using System;
-namespace MUL.Core
+namespace MUL.Core.Protocol
 {
 	/// <summary>
 	/// 	SuperSpeed USB uses four basic packet types each with one or more subtypes. 

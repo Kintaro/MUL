@@ -1,5 +1,5 @@
 using System;
-namespace MUL.Core
+namespace MUL.Core.Protocol
 {
 	/// <summary>
 	/// 	Use of this LMP is intended for vendor-specific 

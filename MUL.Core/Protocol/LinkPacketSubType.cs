@@ -1,5 +1,5 @@
 using System;
-namespace MUL.Core
+namespace MUL.Core.Protocol
 {
 	/// <summary>
 	/// 	The value in the LMP Subtype field further identifies the content of the LMP.
