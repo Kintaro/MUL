@@ -42,7 +42,7 @@ namespace MUL.Core.DeviceFramework
 		/// <summary>
 		/// 	CONFIGURATION Descriptor Type
 		/// </summary>
-		public byte DescriptorType { get; set; }
+		public DescriptorType DescriptorType { get; set; }
 		/// <summary>
 		/// 	Total length of data returned for this 
 		/// 	configuration. Includes the combined length 

@@ -35,7 +35,7 @@ namespace MUL.Core.DeviceFramework
 		/// <summary>
 		/// 	INTERFACE ASSOCIATION Descriptor
 		/// </summary>
-		public byte DescriptorType { get; set; }
+		public DescriptorType DescriptorType { get; set; }
 		/// <summary>
 		/// 	Interface number of the first interface 
 		/// 	that is associated with this function

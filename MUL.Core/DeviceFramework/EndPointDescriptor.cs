@@ -21,7 +21,7 @@ namespace MUL.Core.DeviceFramework
 		/// <summary>
 		/// 	ENDPOINT Descriptor Type
 		/// </summary>
-		public byte DescriptorType { get; set; }
+		public DescriptorType DescriptorType { get; set; }
 		/// <summary>
 		/// 	The address of the endpoint on the device 
 		/// 	described by this descriptor. The address is encoded as follows:

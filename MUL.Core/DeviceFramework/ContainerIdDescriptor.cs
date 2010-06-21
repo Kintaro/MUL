@@ -18,7 +18,7 @@ namespace MUL.Core.DeviceFramework
 		/// <summary>
 		/// 	DEVICE CAPABILITY Descriptor type
 		/// </summary>
-		public byte DescriptorType { get; set; }
+		public DescriptorType DescriptorType { get; set; }
 		/// <summary>
 		/// 	Capability type: CONTAINER_ID
 		/// </summary>

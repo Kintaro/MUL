@@ -19,7 +19,7 @@ namespace MUL.Core.DeviceFramework
 		/// <summary>
 		/// 	BOS Descriptor type
 		/// </summary>
-		public byte DescriptorType { get; set; }
+		public DescriptorType DescriptorType { get; set; }
 		/// <summary>
 		/// 	Length of this descriptor and all of its sub descriptors
 		/// </summary>
