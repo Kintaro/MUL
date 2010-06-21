@@ -12,16 +12,8 @@ namespace MUL.Core.DeviceFramework
 	/// 	a GetDescriptor() or SetDescriptor() request. There is 
 	/// 	never an endpoint descriptor for endpoint zero.
 	/// </summary>
-	public class EndPointDescriptor
+	public class EndPointDescriptor : AbstractDescriptor
 	{
-		/// <summary>
-		/// 	Size of this descriptor in bytes
-		/// </summary>
-		public byte Length { get; set; }
-		/// <summary>
-		/// 	ENDPOINT Descriptor Type
-		/// </summary>
-		public DescriptorType DescriptorType { get; set; }
 		/// <summary>
 		/// 	The address of the endpoint on the device 
 		/// 	described by this descriptor. The address is encoded as follows:

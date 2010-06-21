@@ -9,16 +9,8 @@ namespace MUL.Core.DeviceFramework
 	/// 	in this descriptor should also be provided over those other 
 	/// 	technologies in a technology specific manner.
 	/// </summary>
-	public class ContainerIdDescriptor
+	public class ContainerIdDescriptor : AbstractDescriptor
 	{
-		/// <summary>
-		/// 	Size of descriptor
-		/// </summary>
-		public byte Length { get; set; }
-		/// <summary>
-		/// 	DEVICE CAPABILITY Descriptor type
-		/// </summary>
-		public DescriptorType DescriptorType { get; set; }
 		/// <summary>
 		/// 	Capability type: CONTAINER_ID
 		/// </summary>

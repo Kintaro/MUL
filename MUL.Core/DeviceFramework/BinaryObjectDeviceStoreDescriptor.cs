@@ -10,16 +10,8 @@ namespace MUL.Core.DeviceFramework
 	/// 	descriptor set, or it can read in the entire BOS descriptor 
 	/// 	set of device capabilities.
 	/// </summary
-	public class BinaryObjectDeviceStoreDescriptor
+	public class BinaryObjectDeviceStoreDescriptor : AbstractDescriptor
 	{
-		/// <summary>
-		/// 	Size of descriptor
-		/// </summary>
-		public byte Number { get; set; }
-		/// <summary>
-		/// 	BOS Descriptor type
-		/// </summary>
-		public DescriptorType DescriptorType { get; set; }
 		/// <summary>
 		/// 	Length of this descriptor and all of its sub descriptors
 		/// </summary>

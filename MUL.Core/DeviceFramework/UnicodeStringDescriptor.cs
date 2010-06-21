@@ -6,16 +6,8 @@ namespace MUL.Core.DeviceFramework
 	/// 	NULL-terminated. The string length is computed by subtracting 
 	/// 	two from the value of the first byte of the descriptor.
 	/// </summary>
-	public class UnicodeStringDescriptor
+	public class UnicodeStringDescriptor : AbstractDescriptor
 	{
-		/// <summary>
-		/// 	Size of this descriptor in bytes
-		/// </summary>
-		public byte Length { get; set; }
-		/// <summary>
-		/// 	STRING Descriptor Type
-		/// </summary>
-		public DescriptorType DescriptorType { get; set; }
 		/// <summary>
 		/// 	UNICODE encoded string
 		/// </summary>

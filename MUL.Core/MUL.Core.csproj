@@ -58,6 +58,7 @@
     <Compile Include="DeviceFramework\StandardRequestCode.cs" />
     <Compile Include="DeviceFramework\DeviceCapabilityDescriptor.cs" />
     <Compile Include="DeviceFramework\DeviceCapabilityType.cs" />
+    <Compile Include="DeviceFramework\AbstractDescriptor.cs" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Protocol\" />

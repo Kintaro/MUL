@@ -33,16 +33,8 @@ namespace MUL.Core.DeviceFramework
 	/// 	configuration. If a particular interface has alternate settings, 
 	/// 	an alternate may be selected after configuration. 
 	/// </summary>
-	public class StandardConfigurationDescriptor
+	public class StandardConfigurationDescriptor : AbstractDescriptor
 	{
-		/// <summary>
-		/// 	Size of this descriptor in bytes
-		/// </summary>
-		public byte Length { get; set; }
-		/// <summary>
-		/// 	CONFIGURATION Descriptor Type
-		/// </summary>
-		public DescriptorType DescriptorType { get; set; }
 		/// <summary>
 		/// 	Total length of data returned for this 
 		/// 	configuration. Includes the combined length 

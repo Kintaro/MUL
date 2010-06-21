@@ -1,16 +1,8 @@
 using System;
 namespace MUL.Core.DeviceFramework
 {
-	public class DeviceCapabilityDescriptor
+	public class DeviceCapabilityDescriptor : AbstractDescriptor
 	{
-		/// <summary>
-		/// 	Size of this descriptor.
-		/// </summary>
-		public byte Length { get; set; }
-		/// <summary>
-		/// 	Descriptor type: DEVICE CAPABILITY Type.
-		/// </summary>
-		public DescriptorType DescriptorType { get; set; }
 		/// <summary>
 		/// 	Valid values are listed in Table 9-11.
 		/// </summary>

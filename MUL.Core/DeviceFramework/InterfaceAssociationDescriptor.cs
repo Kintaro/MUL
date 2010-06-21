@@ -26,16 +26,8 @@ namespace MUL.Core.DeviceFramework
 	/// 	protocol field values from the first interface in the list 
 	/// 	of associated interfaces.
 	/// </summary>
-	public class InterfaceAssociationDescriptor
+	public class InterfaceAssociationDescriptor : AbstractDescriptor
 	{
-		/// <summary>
-		/// 	Size of this descriptor in bytes
-		/// </summary>
-		public byte Length { get; set; }
-		/// <summary>
-		/// 	INTERFACE ASSOCIATION Descriptor
-		/// </summary>
-		public DescriptorType DescriptorType { get; set; }
 		/// <summary>
 		/// 	Interface number of the first interface 
 		/// 	that is associated with this function
