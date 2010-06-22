@@ -35,17 +35,6 @@
   <ItemGroup>
     <Compile Include="AssemblyInfo.cs" />
     <Compile Include="Protocol\PacketType.cs" />
-    <Compile Include="Protocol\LinkControlWord.cs" />
-    <Compile Include="Protocol\LinkPacketSubType.cs" />
-    <Compile Include="Protocol\TransactionPacketSubtype.cs" />
-    <Compile Include="Protocol\LinkManagementPacket.cs" />
-    <Compile Include="Protocol\AbstractPacket.cs" />
-    <Compile Include="Protocol\SetLinkFunctionPacket.cs" />
-    <Compile Include="Protocol\SetLinkFunction.cs" />
-    <Compile Include="Protocol\IsochronousTimestamp.cs" />
-    <Compile Include="Protocol\IField.cs" />
-    <Compile Include="Protocol\LinkPacketSubtypeField.cs" />
-    <Compile Include="Protocol\VendorDeviceTestPacket.cs" />
     <Compile Include="DeviceFramework\DescriptorType.cs" />
     <Compile Include="DeviceFramework\DeviceDescriptor.cs" />
     <Compile Include="DeviceFramework\BinaryObjectDeviceStoreDescriptor.cs" />

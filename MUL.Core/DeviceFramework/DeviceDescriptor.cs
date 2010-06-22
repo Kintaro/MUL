@@ -77,19 +77,34 @@ namespace MUL.Core.DeviceFramework
 		/// <summary>
 		/// 	Index of string descriptor describing manufacturer
 		/// </summary>
-		public byte ManufacturerName { get; set; }
+		public byte ManufacturerNameIndex { get; set; }
 		/// <summary>
 		/// 	Index of string descriptor describing product
 		/// </summary>
-		public byte ProductName { get; set; }
+		public byte ProductNameIndex { get; set; }
 		/// <summary>
 		/// 	Index of string descriptor describing the device’s serial number
 		/// </summary>
-		public byte SerialNumberString { get; set; }
+		public byte SerialNumberIndex { get; set; }
 		/// <summary>
 		/// 	Number of possible configurations
 		/// </summary>
 		public byte NumberOfConfigurations { get; set; }
+		/// <summary>
+		/// 	Returns the USB version as string
+		/// </summary>
+		public string UsbVersion
+		{
+			get 
+			{
+				byte subMinor = (this.USB & 0x0Fu);
+				byte minor = (this.USB >> 0x04) & 0x0Fu;
+				byte major1 = (this.USB >> 0x08) & 0x0Fu;
+				byte major2 = (this.USB >> 0x0C) & 0x0Fu;
+				
+				return major2 + "" + major1 + "." + minor + "." + subMinor;
+			}
+		}
 	}
 }
 
