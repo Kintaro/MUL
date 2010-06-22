@@ -4,7 +4,7 @@ namespace MUL.Core.Protocol
 	/// <summary>
 	/// 	SuperSpeed USB uses four basic packet types each with one or more subtypes. 
 	/// </summary>
-	public enum PacketType : byte
+	public enum PacketType : uint
 	{
 		/// <summary>
 		/// 	(LMP) only travel between a pair of links 

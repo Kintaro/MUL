@@ -97,10 +97,10 @@ namespace MUL.Core.DeviceFramework
 		{
 			get 
 			{
-				byte subMinor = (this.USB & 0x0Fu);
-				byte minor = (this.USB >> 0x04) & 0x0Fu;
-				byte major1 = (this.USB >> 0x08) & 0x0Fu;
-				byte major2 = (this.USB >> 0x0C) & 0x0Fu;
+				uint subMinor = (this.USB & 0x0Fu);
+				long minor = (this.USB >> 0x04) & 0x0Fu;
+				long major1 = (this.USB >> 0x08) & 0x0Fu;
+				long major2 = (this.USB >> 0x0C) & 0x0Fu;
 				
 				return major2 + "" + major1 + "." + minor + "." + subMinor;
 			}
