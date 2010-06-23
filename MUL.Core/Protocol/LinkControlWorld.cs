@@ -84,17 +84,17 @@ namespace MUL.Core.Protocol
 				uint data = HeaderSequenceNumber.Data | HubDepth.Data | Delayed.Data | Deferred.Data;
 				uint crc = Util.Crc5.Perform (data & 0x7FFu, 11);
 				this.Crc5.Data = crc;
-				this.data = data | Crc5.Data;
+				this.RawData = data | Crc5.Data;
 				return base.Data;
 			}
 			set 
 			{
-				this.data = value;
+				this.RawData = value;
 				this.HeaderSequenceNumber.Data = value >> this.HeaderSequenceNumber.Offset;
 				this.HubDepth.Data = value >> this.HubDepth.Offset;
 				this.Delayed.Data = value >> this.Delayed.Offset;
 				this.Deferred.Data = value >> this.Deferred.Offset;
-				uint crc = Util.Crc5.Perform (this.data & 0x7FFu, 11);
+				uint crc = Util.Crc5.Perform (this.RawData & 0x7FFu, 11);
 				this.Crc5.Data = crc;
 			}
 		}

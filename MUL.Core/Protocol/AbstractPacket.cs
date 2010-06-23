@@ -3,8 +3,17 @@ namespace MUL.Core.Protocol
 {
 	public abstract class AbstractPacket
 	{
+		/// <summary>
+		/// 	The packet's type
+		/// </summary>
 		public TypeField Type = new TypeField ();
+		/// <summary>
+		/// 	Every packet carries a link control word
+		/// </summary>
 		public LinkControlWorld LinkControlWord = new LinkControlWorld ();
+		/// <summary>
+		/// 	The packet's data in double words
+		/// </summary>
 		public abstract uint[] PacketData { get; }
 		
 		public AbstractPacket (PacketType type)

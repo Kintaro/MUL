@@ -20,9 +20,9 @@ namespace MUL.Core.Protocol
 		{
 			get 
 			{
-				return (PacketType)this.data;
+				return (PacketType)this.RawData;
 			}
-			set { this.data = (uint)value; }
+			set { this.RawData = (uint)value; }
 		}
 	}
 }
