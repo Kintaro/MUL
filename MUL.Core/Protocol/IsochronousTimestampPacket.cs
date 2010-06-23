@@ -74,6 +74,16 @@ namespace MUL.Core.Protocol
 
 			get { return new uint[] { this.Type.Data | (this.IsochronousTimestamp << 5), this.BusIntervalAdjustmentControl, 0, this.LinkControlWord.Data }; }
 		}
+		
+		public override string DetailedString {
+			get {
+				string result = base.DetailedString + "\n";
+				result += "Bus Interval Counter: 0x" + this.BusIntervalCounter.ToString ("X") + "\n";
+				result += "Delta: 0x" + this.Delta.ToString ("X");
+				
+				return result;
+			}
+		}
 	}
 }
 

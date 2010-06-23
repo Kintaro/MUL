@@ -43,6 +43,15 @@ namespace MUL.Core.Protocol
 				return ((uint)SetLinkFunction) << 1;
 			}
 		}
+		
+		public override string DetailedString {
+			get {
+				string result = base.DetailedString + "\n";
+				result += "Set Link Function: " + this.SetLinkFunction.ToString ();
+				
+				return result;
+			}
+		}
 	}
 }
 

@@ -41,7 +41,7 @@ namespace MUL.Core.Protocol
 		
 		public override string ToString ()
 		{
-			return "0x" + this.RawData.ToString ("X8");
+			return "0x" + this.RawData.ToString ("X");
 		}
 	}
 }
