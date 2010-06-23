@@ -56,14 +56,35 @@ namespace MUL.Core.Protocol
 		public DelayedField Delayed = new DelayedField ();
 		public DeferredField Deferred = new DeferredField ();
 		public Crc5Field Crc5 = new Crc5Field ();
+		
+		public LinkControlWorld ()
+		{
+			Crc5.Offset = 11;
+		}
 
 		public override int Width {
 			get { return 16; }
 		}
 
 		public override uint Data {
-			get { return HeaderSequenceNumber.Data | HubDepth.Data | Delayed.Data | Deferred.Data | Crc5.Data; }
-			set { this.data = value; }
+			get 
+			{
+				uint data = HeaderSequenceNumber.Data | HubDepth.Data | Delayed.Data | Deferred.Data;
+				uint crc = Util.Crc5.Perform (data & 0x7FFu, 11);
+				this.Crc5.Data = crc;
+				this.data = data | Crc5.Data;
+				return base.Data;
+			}
+			set 
+			{
+				this.data = value;
+				this.HeaderSequenceNumber.Data = value >> this.HeaderSequenceNumber.Offset;
+				this.HubDepth.Data = value >> this.HubDepth.Offset;
+				this.Delayed.Data = value >> this.Delayed.Offset;
+				this.Deferred.Data = value >> this.Deferred.Offset;
+				uint crc = Util.Crc5.Perform (this.data & 0x7FFu, 11);
+				this.Crc5.Data = crc;
+			}
 		}
 	}
 }

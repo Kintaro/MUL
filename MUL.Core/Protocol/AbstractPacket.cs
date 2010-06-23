@@ -3,8 +3,14 @@ namespace MUL.Core.Protocol
 {
 	public abstract class AbstractPacket
 	{
-		public LinkControlWorld LinkControlWord;
-		public abstract AbstractField[] PacketData { get; }
+		public TypeField Type = new TypeField ();
+		public LinkControlWorld LinkControlWord = new LinkControlWorld ();
+		public abstract uint[] PacketData { get; }
+		
+		public AbstractPacket ()
+		{
+			this.LinkControlWord.ByteOffset = 3;
+		}
 	}
 }
 
