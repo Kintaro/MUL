@@ -61,6 +61,18 @@ namespace MUL.Core.Protocol
 		{
 			Crc5.Offset = 11;
 		}
+		
+		public LinkControlWorld (uint headerSequenceNumber, uint hubDepth, bool delayed, bool deferred)
+		{
+			Crc5.Offset = 11;
+			this.HeaderSequenceNumber.Data = headerSequenceNumber;
+			this.HubDepth.Data = hubDepth;
+			this.Delayed.Data = delayed ? 1u : 0u;
+			this.Deferred.Data = deferred ? 1u : 0u;
+			uint data = HeaderSequenceNumber.Data | HubDepth.Data | Delayed.Data | Deferred.Data;
+			uint crc = Util.Crc5.Perform (data & 0x7FFu, 11);
+			this.Crc5.Data = crc;
+		}
 
 		public override int Width {
 			get { return 16; }

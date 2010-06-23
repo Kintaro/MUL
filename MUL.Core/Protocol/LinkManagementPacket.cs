@@ -13,7 +13,12 @@ namespace MUL.Core.Protocol
 			PortConfigurationResponse = 0x06
 		}
 
-		public LinkManagementPacketSubtype Subtype;
+		protected LinkManagementPacketSubtype Subtype;
+		
+		protected LinkManagementPacket (LinkManagementPacketSubtype subType)
+		{
+			this.Subtype = subType;
+		}
 
 		public override uint[] PacketData {
 			get { return new uint[] { this.Type.Data | ((uint)this.Subtype << 5) | this.SubtypeSpecificField << 9, this.InternalData[0], this.InternalData[1], this.LinkControlWord.Data }; }

@@ -11,6 +11,18 @@ namespace MUL.Core.Protocol
 		{
 			this.LinkControlWord.ByteOffset = 3;
 		}
+		
+		public override string ToString ()
+		{
+			uint[] data = PacketData;
+			string result = "[";
+			result += this.GetType ().Name + ":";
+			
+			for (int i = data.Length - 1; i >= 0; --i)
+				result += " 0x" + data[i].ToString ("X4");
+			result += "]";
+			return result;
+		}
 	}
 }
 
