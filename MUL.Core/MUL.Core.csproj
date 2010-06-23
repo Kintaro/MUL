@@ -64,6 +64,7 @@
     <Compile Include="Protocol\TransactionPacket.cs" />
     <Compile Include="Protocol\AcknowledgementPacket.cs" />
     <Compile Include="Protocol\NotReadyPacket.cs" />
+    <Compile Include="Protocol\EndpointReadyPacket.cs" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Protocol\" />
