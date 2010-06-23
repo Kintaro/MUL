@@ -60,6 +60,7 @@
     <Compile Include="Util\Crc5.cs" />
     <Compile Include="Protocol\U2InactivityTimeoutPacket.cs" />
     <Compile Include="Protocol\PortConfigurationPacket.cs" />
+    <Compile Include="Protocol\IsochronousTimestampPacket.cs" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Protocol\" />

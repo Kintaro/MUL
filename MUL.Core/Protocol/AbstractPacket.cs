@@ -7,9 +7,10 @@ namespace MUL.Core.Protocol
 		public LinkControlWorld LinkControlWord = new LinkControlWorld ();
 		public abstract uint[] PacketData { get; }
 		
-		public AbstractPacket ()
+		public AbstractPacket (PacketType type)
 		{
 			this.LinkControlWord.ByteOffset = 3;
+			this.Type.Type = type;
 		}
 		
 		public override string ToString ()

@@ -15,7 +15,7 @@ namespace MUL.Core.Protocol
 
 		protected LinkManagementPacketSubtype Subtype;
 		
-		protected LinkManagementPacket (LinkManagementPacketSubtype subType)
+		protected LinkManagementPacket (LinkManagementPacketSubtype subType) : base (PacketType.LinkManagementPacket)
 		{
 			this.Subtype = subType;
 		}

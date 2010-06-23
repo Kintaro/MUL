@@ -15,6 +15,15 @@ namespace MUL.Core.Protocol
 				return 5;
 			}
 		}
+		
+		public PacketType Type
+		{
+			get 
+			{
+				return (PacketType)this.data;
+			}
+			set { this.data = (uint)value; }
+		}
 	}
 }
 
