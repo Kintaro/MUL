@@ -98,6 +98,19 @@ namespace MUL.Core.Protocol
 				this.Crc5.Data = crc;
 			}
 		}
+		
+		public override string ToString ()
+		{
+			string result = string.Empty;
+			result += "LinkControlWord:\n";
+			result += "  + Header Sequence Number: " + this.HeaderSequenceNumber + "\n";
+			result += "  + Hub Depth: " + this.HubDepth + "\n";
+			result += "  + Delayed: " + (this.Delayed.RawData != 0 ? true : false) + "\n";
+			result += "  + Deferred: " + (this.Deferred.RawData != 0 ? true : false) + "\n";
+			result += "  + Crc5 Checksum: " + this.Crc5;
+			
+			return result;
+		}
 	}
 }
 

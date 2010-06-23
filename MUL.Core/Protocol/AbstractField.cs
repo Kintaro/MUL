@@ -38,6 +38,11 @@ namespace MUL.Core.Protocol
 			get { return (uint)((this.RawData & ((1 << this.Width) - 1)) << Offset); }
 			set { this.RawData = (uint)(value & ((1 << this.Width) - 1)); }
 		}
+		
+		public override string ToString ()
+		{
+			return "0x" + this.RawData.ToString ("X8");
+		}
 	}
 }
 

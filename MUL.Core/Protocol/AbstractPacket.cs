@@ -29,9 +29,20 @@ namespace MUL.Core.Protocol
 			result += this.GetType ().Name + ":";
 			
 			for (int i = data.Length - 1; i >= 0; --i)
-				result += " 0x" + data[i].ToString ("X4");
+				result += " 0x" + data[i].ToString ("X8");
 			result += "]";
 			return result;
+		}
+		
+		public virtual string DetailedString 
+		{
+			get
+			{
+				string result = string.Empty;
+				result += "Packet Type: " + this.GetType ().Name + "\n";
+				result += LinkControlWord.ToString ();
+				return result;
+			}
 		}
 	}
 }

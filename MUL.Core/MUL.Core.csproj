@@ -61,6 +61,9 @@
     <Compile Include="Protocol\U2InactivityTimeoutPacket.cs" />
     <Compile Include="Protocol\PortConfigurationPacket.cs" />
     <Compile Include="Protocol\IsochronousTimestampPacket.cs" />
+    <Compile Include="Protocol\TransactionPacket.cs" />
+    <Compile Include="Protocol\AcknowledgementPacket.cs" />
+    <Compile Include="Protocol\NotReadyPacket.cs" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Protocol\" />
