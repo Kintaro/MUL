@@ -12,6 +12,10 @@ namespace MUL.Core.Protocol
 		/// </summary>
 		public LinkControlWorld LinkControlWord = new LinkControlWorld ();
 		/// <summary>
+		/// 
+		/// </summary>
+		public Crc16Field Crc16 = new Crc16Field ();
+		/// <summary>
 		/// 	The packet's data in double words
 		/// </summary>
 		public abstract uint[] PacketData { get; }

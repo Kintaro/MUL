@@ -1,4 +1,6 @@
 using System;
+using System.Net;
+
 namespace MUL.Core.Protocol
 {
 	public class LinkControlWorld : AbstractField

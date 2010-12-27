@@ -15,6 +15,54 @@ namespace MUL.Core.DeviceFramework
 	public class EndPointDescriptor : AbstractDescriptor
 	{
 		/// <summary>
+		/// 
+		/// </summary>
+		public enum EndpointDirection : byte
+		{
+			Out = 0x00,
+			In = 0x01,
+		}
+		/// <summary>
+		/// 
+		/// </summary>
+		public enum TransferTypeEnum : byte 
+		{
+			Control = 0x00,
+			Isochronous = 0x01,
+			Bulk = 0x02,
+			Interrupt = 0x03,
+		}
+		/// <summary>
+		/// 
+		/// </summary>
+		public enum InterruptUsageTypeEnum
+		{
+			Periodic = 0x00,
+			Notification = 0x01,
+			Reserved1 = 0x02,
+			Reserved2 = 0x03,
+		}
+		/// <summary>
+		/// 
+		/// </summary>
+		public enum IsochronousUsageTypeEnum
+		{
+			DataEndpoint = 0x00,
+			FeedbackEndpoint = 0x01,
+			ImplicitFeedbackDataEndpoint = 0x02,
+			Reserved = 0x03,
+		}
+		/// <summary>
+		/// 
+		/// </summary>
+		public enum SynchronizationTypeEnum
+		{
+			NoSynchronization = 0x00,
+			Asynchronous = 0x01,
+			Adaptive = 0x02,
+			Synchronous = 0x03,
+		}
+		/// <summary>
 		/// 	The address of the endpoint on the device 
 		/// 	described by this descriptor. The address is encoded as follows:
 		/// 
@@ -25,6 +73,13 @@ namespace MUL.Core.DeviceFramework
 		/// 		1 = IN endpoint
 		/// </summary>
 		public byte EndpointAddress { get; set; }
+		/// <summary>
+		/// 
+		/// </summary>
+		public byte EndpointNumber
+		{
+			get { return (byte)(EndpointAddress & 0xF); }
+		}
 		/// <summary>
 		/// 	This field describes the endpoint’s attributes when it is 
 		/// 	configured using the bConfigurationValue.
@@ -61,6 +116,46 @@ namespace MUL.Core.DeviceFramework
 		/// 	Reserved bits shall be ignored by the host.
 		/// </summary>
 		public byte Attributes { get; set; }
+		/// <summary>
+		/// 
+		/// </summary>
+		public TransferTypeEnum TransferType 
+		{
+			get { return (TransferTypeEnum)(this.Attributes & 0x03); }
+		}
+		/// <summary>
+		/// 
+		/// </summary>
+		public InterruptUsageTypeEnum InterruptUsageType
+		{
+			get { 
+				if (this.TransferType != EndPointDescriptor.TransferTypeEnum.Interrupt)
+					throw new NotSupportedException ("InterruptUsageType is only supported for Interrupts");
+				return (InterruptUsageTypeEnum)((this.Attributes & 0x30) >> 4); 
+			}
+		}
+		/// <summary>
+		/// 
+		/// </summary>
+		public IsochronousUsageTypeEnum IsochronousUsageType
+		{
+			get { 
+				if (this.TransferType != EndPointDescriptor.TransferTypeEnum.Isochronous)
+					throw new NotSupportedException ("IsochronousUsageType is only supported for Isochronous");
+				return (IsochronousUsageTypeEnum)((this.Attributes & 0x30) >> 4); 
+			}
+		}
+		/// <summary>
+		/// 
+		/// </summary>
+		public SynchronizationTypeEnum SynchronizationType
+		{
+			get { 
+				if (this.TransferType != EndPointDescriptor.TransferTypeEnum.Isochronous)
+					throw new NotSupportedException ("SynchronizationType is only supported for Isochronous");
+				return (SynchronizationTypeEnum)((this.Attributes & 0xC) >> 2); 
+			}
+		}
 		/// <summary>
 		/// 	Maximum packet size this endpoint is capable of 
 		/// 	sending or receiving when this configuration is selected.

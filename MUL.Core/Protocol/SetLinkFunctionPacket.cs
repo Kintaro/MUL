@@ -21,29 +21,50 @@ namespace MUL.Core.Protocol
 	/// </summary>
 	public class SetLinkFunctionPacket : LinkManagementPacket
 	{
+		/// <summary>
+		/// 
+		/// </summary>
 		public enum SetLinkFunctionType : uint
 		{
 			DeAssert = 0,
 			Assert = 1,
 		}
 		
+		/// <summary>
+		/// 
+		/// </summary>
 		public SetLinkFunctionType SetLinkFunction = SetLinkFunctionType.DeAssert;
 		
+		/// <summary>
+		/// 
+		/// </summary>
 		public SetLinkFunctionPacket () : base(LinkManagementPacketSubtype.SetLinkFunction)
 		{
 		}
 		
+		/// <summary>
+		/// 
+		/// </summary>
+		/// <param name="type">
+		/// A <see cref="SetLinkFunctionType"/>
+		/// </param>
 		public SetLinkFunctionPacket (SetLinkFunctionType type) : this ()
 		{
 			this.SetLinkFunction = type;
 		}
 		
+		/// <summary>
+		/// 
+		/// </summary>
 		protected override uint SubtypeSpecificField {
 			get {
 				return ((uint)SetLinkFunction) << 1;
 			}
 		}
 		
+		/// <summary>
+		/// 
+		/// </summary>
 		public override string DetailedString {
 			get {
 				string result = base.DetailedString + "\n";

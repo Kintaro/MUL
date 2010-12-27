@@ -1,4 +1,5 @@
 using System;
+
 namespace MUL.Core.Util
 {
 	public static class Crc5
