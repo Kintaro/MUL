@@ -1,7 +1,7 @@
 using System;
 namespace MUL.Core.DeviceFramework
 {
-	public class AbstractDescriptor
+	public abstract class AbstractDescriptor
 	{
 		/// <summary>
 		/// 	Size of this descriptor in bytes
