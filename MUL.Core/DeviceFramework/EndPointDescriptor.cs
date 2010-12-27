@@ -35,7 +35,7 @@ namespace MUL.Core.DeviceFramework
 		/// <summary>
 		/// 
 		/// </summary>
-		public enum InterruptUsageTypeEnum
+		public enum InterruptUsageTypeEnum : byte
 		{
 			Periodic = 0x00,
 			Notification = 0x01,
@@ -45,7 +45,7 @@ namespace MUL.Core.DeviceFramework
 		/// <summary>
 		/// 
 		/// </summary>
-		public enum IsochronousUsageTypeEnum
+		public enum IsochronousUsageTypeEnum : byte
 		{
 			DataEndpoint = 0x00,
 			FeedbackEndpoint = 0x01,
@@ -55,7 +55,7 @@ namespace MUL.Core.DeviceFramework
 		/// <summary>
 		/// 
 		/// </summary>
-		public enum SynchronizationTypeEnum
+		public enum SynchronizationTypeEnum : byte
 		{
 			NoSynchronization = 0x00,
 			Asynchronous = 0x01,
@@ -78,7 +78,13 @@ namespace MUL.Core.DeviceFramework
 		/// </summary>
 		public byte EndpointNumber
 		{
-			get { return (byte)(EndpointAddress & 0xF); }
+			get { return (byte)(EndpointAddress & 0x0Fu); }
+			set { 
+				if (value == 0)
+					this.TransferType = EndPointDescriptor.TransferTypeEnum.Control;
+				unchecked { this.EndpointAddress &= (byte)~0x0Fu; }
+				this.EndpointAddress |= (byte)(value & 0x0Fu);
+			}
 		}
 		/// <summary>
 		/// 	This field describes the endpoint’s attributes when it is 
@@ -121,7 +127,11 @@ namespace MUL.Core.DeviceFramework
 		/// </summary>
 		public TransferTypeEnum TransferType 
 		{
-			get { return (TransferTypeEnum)(this.Attributes & 0x03); }
+			get { return (TransferTypeEnum)(this.Attributes & 0x03u); }
+			set { 
+				unchecked { Attributes = (byte)((byte)TransferType & ~0x03u); }
+				Attributes |= (byte)((byte)value & 0x03u);
+			}
 		}
 		/// <summary>
 		/// 
